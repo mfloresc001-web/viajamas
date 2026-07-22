@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas</title>
+    <link href="../css/css.css" rel="stylesheet"/>
+
+    <script src="https://kit.fontawesome.com/76d9655661.js" crossorigin="anonymous"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body class="bg-light">
+    
+    <!-- //////////////// HEADER //////////////// -->
+    <header>
+        <div class="container">
+            <div class="p-3 d-flex flex-wrap justify-content-center justify-content-lg-between align-items-center">
+                <a href="#" class="nav-brand">
+                    <img 
+                        src="../img/logo.webp"
+                        alt="Logo"
+                        width="200"
+                        height="auto"
+                    >
+                </a>
+                <div class="nav-center d-flex flex-wrap justify-content-center align-items-center">
+                    <ul class="nav col-12 col-lg-auto mt-2 justify-content-center mt-md-0">
+                        <li class="ps-1"><a href="home.html" class="nav-link px-3 py-2 google-sans-500">Inicio</a></li>
+                        <li class="ps-1"><a href="nosotros.html" class="nav-link px-3 py-2 google-sans-500">Nosotros</a></li>
+                        <li class="ps-1"><a href="reservas.html" class="nav-link px-3 py-2 google-sans-500">Reservas</a></li>
+                        <li class="ps-1"><a href="galeria.html" class="nav-link px-3 py-2 google-sans-500">Galería</a></li>
+                        <li class="ps-1"><a href="contacto.html" class="nav-link px-3 py-2 google-sans-500">Contacto</a></li>
+                    </ul>
+                    <a href="#" class="lang-switcher ms-lg-2 px-3 py-3 google-sans-500" data-bs-toggle="modal" data-bs-target="#languageModal">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-globe2" viewBox="0 0 16 16">
+                            <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855q-.215.403-.395.872c.705.157 1.472.257 2.282.287zM4.249 3.539q.214-.577.481-1.078a7 7 0 0 1 .597-.933A7 7 0 0 0 3.051 3.05q.544.277 1.198.49zM3.509 7.5c.036-1.07.188-2.087.436-3.008a9 9 0 0 1-1.565-.667A6.96 6.96 0 0 0 1.018 7.5zm1.4-2.741a12.3 12.3 0 0 0-.4 2.741H7.5V5.091c-.91-.03-1.783-.145-2.591-.332M8.5 5.09V7.5h2.99a12.3 12.3 0 0 0-.399-2.741c-.808.187-1.681.301-2.591.332zM4.51 8.5c.035.987.176 1.914.399 2.741A13.6 13.6 0 0 1 7.5 10.91V8.5zm3.99 0v2.409c.91.03 1.783.145 2.591.332.223-.827.364-1.754.4-2.741zm-3.282 3.696q.18.469.395.872c.552 1.035 1.218 1.65 1.887 1.855V11.91c-.81.03-1.577.13-2.282.287zm.11 2.276a7 7 0 0 1-.598-.933 9 9 0 0 1-.481-1.079 8.4 8.4 0 0 0-1.198.49 7 7 0 0 0 2.276 1.522zm-1.383-2.964A13.4 13.4 0 0 1 3.508 8.5h-2.49a6.96 6.96 0 0 0 1.362 3.675c.47-.258.995-.482 1.565-.667m6.728 2.964a7 7 0 0 0 2.275-1.521 8.4 8.4 0 0 0-1.197-.49 9 9 0 0 1-.481 1.078 7 7 0 0 1-.597.933M8.5 11.909v3.014c.67-.204 1.335-.82 1.887-1.855q.216-.403.395-.872A12.6 12.6 0 0 0 8.5 11.91zm3.555-.401c.57.185 1.095.409 1.565.667A6.96 6.96 0 0 0 14.982 8.5h-2.49a13.4 13.4 0 0 1-.437 3.008M14.982 7.5a6.96 6.96 0 0 0-1.362-3.675c-.47.258-.995.482-1.565.667.248.92.4 1.938.437 3.008zM11.27 2.461q.266.502.482 1.078a8.4 8.4 0 0 0 1.196-.49 7 7 0 0 0-2.275-1.52c.218.283.418.597.597.932m-.488 1.343a8 8 0 0 0-.395-.872C9.835 1.897 9.17 1.282 8.5 1.077V4.09c.81-.03 1.577-.13 2.282-.287z"/>
+                        </svg>
+                        <span class="ps-2 google-sans-500">PE</span>
+                    </a>
+                    <div class="dropdown text-end ms-3 ms-lg-2 ps-lg-2">
+                        <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img
+                                src="https://github.com/mdo.png"
+                                alt="mdo"
+                                width="32"
+                                height="32"
+                                class="rounded-circle"
+                            />
+                        </a>
+                        <ul class="dropdown-menu text-small">
+                            <li><a class="dropdown-item google-sans-400" href="#">Carrito</a></li>
+                            <li><a class="dropdown-item google-sans-400" href="#">Favoritos</a></li>
+                            <li><a class="dropdown-item google-sans-400" href="#">Configuración</a></li>
+                            <li><a class="dropdown-item google-sans-400" href="#">Perfil</a></li>
+                            <li><hr class="dropdown-divider"/></li>
+                            <li><a class="dropdown-item google-sans-400" href="#">Cerrar sesión</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Modal -->
+    <div class="modal fade" id="languageModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5 google-sans-500" id="exampleModalLabel">Preferencias de idioma</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary google-sans-400" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary google-sans-400">Guardar cambios</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- //////////////// MAIN //////////////// -->
+
+    <main>
+        <div class="px-4 py-5 my-5 text-center google-sans-400">
+            <h1 class="display-5 fw-bold text-body-emphasis google-sans-700">Explora, compara y reserva con confianza</h1>
+            <div class="col-lg-6 mx-auto">
+                <p class="lead mb-4 google-sans-400">
+                    Personaliza tu búsqueda mediante una amplia variedad de filtros y descubre las mejores opciones disponibles para vivir una experiencia única en cualquier destino del Perú
+                </p>
+                <div class="d-sm-flex justify-content-sm-center">
+                    <div class="input-group">
+                        <button id="actividadDropdownButton" class="btn btn-outline-secondary dropdown-toggle google-sans-600" type="button" data-bs-toggle="dropdown" aria-expanded="false">Actividad</button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item actividad-option google-sans-400" href="#" data-value="Hoteles">Hoteles</a></li>
+                            <li><a class="dropdown-item actividad-option google-sans-400" href="#" data-value="Restaurantes">Restaurantes</a></li>
+                            <li><a class="dropdown-item actividad-option google-sans-400" href="#" data-value="Alquileres">Alquileres</a></li>
+                            <li><a class="dropdown-item actividad-option google-sans-400" href="#" data-value="Tours">Tours</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item actividad-option google-sans-400" href="#" data-value="Buscar todo">Buscar todo</a></li>
+                        </ul>
+                        <div class="form-floating google-sans-400">
+                            <input type="text" class="form-control" id="actividad" placeholder="Actividad">
+                            <label for="floatingPassword">Describe tu actividad</label>
+                        </div>
+                        <button class="btn btn-outline-secondary" type="button" id="button-addon2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container google-sans-400">
+            <div class="row g-5">
+                <div class="col-md-4">
+                    <div class="position-sticky" style="top: 2rem">
+                        <div>
+                            <h4 class="fst-italic">Filtros</h4>
+                            <div class="accordion border-top pt-4" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                        Ordenar resultados
+                                    </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault1">
+                                                <label class="form-check-label" for="radioDefault1">
+                                                    Relevancia
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault2">
+                                                <label class="form-check-label" for="radioDefault2">
+                                                    Mejor calificación
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault3">
+                                                <label class="form-check-label" for="radioDefault3">
+                                                    Más populares
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault4">
+                                                <label class="form-check-label" for="radioDefault4">
+                                                    Precio: Menor a mayor
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault5">
+                                                <label class="form-check-label" for="radioDefault5">
+                                                    Precio: Mayor a menor
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault6">
+                                                <label class="form-check-label" for="radioDefault6">
+                                                    Más recientes
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault7">
+                                                <label class="form-check-label" for="radioDefault7">
+                                                    Más cercanos
+                                                </label>
+                                            </div>                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Tipo de servicio
+                                    </button>
+                                    </h2>
+                                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="checkDefault">
+                                                <label class="form-check-label" for="checkDefault">
+                                                    Hoteles
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="checkDefault1">
+                                                <label class="form-check-label" for="checkDefault1">
+                                                    Restaurantes
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="checkDefault2">
+                                                <label class="form-check-label" for="checkDefault2">
+                                                    Alquileres
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="checkDefault3">
+                                                <label class="form-check-label" for="checkDefault3">
+                                                    Tours
+                                                </label>
+                                            </div>                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Ideal para
+                                    </button>
+                                    </h2>
+                                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="checkDefault4">
+                                                <label class="form-check-label" for="checkDefault4">
+                                                    Parejas
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="checkDefault5">
+                                                <label class="form-check-label" for="checkDefault5">
+                                                    Familias
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="checkDefault6">
+                                                <label class="form-check-label" for="checkDefault6">
+                                                    Grupos
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="checkDefault7">
+                                                <label class="form-check-label" for="checkDefault7">
+                                                    Viajeros solitarios
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="checkDefault8">
+                                                <label class="form-check-label" for="checkDefault8">
+                                                    Viajes de negocios
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" value="" id="checkDefault9">
+                                                <label class="form-check-label" for="checkDefault9">
+                                                    Nómadas digitales
+                                                </label>
+                                            </div>                                                                                         
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        Precio
+                                    </button>
+                                    </h2>
+                                    <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault8" checked>
+                                                <label class="form-check-label" for="radioDefault8">
+                                                    Todos los precios
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault9">
+                                                <label class="form-check-label" for="radioDefault9">
+                                                    Económico
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault10">
+                                                <label class="form-check-label" for="radioDefault10">
+                                                    Intermedio
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault11">
+                                                <label class="form-check-label" for="radioDefault11">
+                                                    Premium
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault12">
+                                                <label class="form-check-label" for="radioDefault12">
+                                                    Lujo
+                                                </label>
+                                            </div>                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                        Calificación mínima
+                                    </button>
+                                    </h2>
+                                    <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault13" checked>
+                                                <label class="form-check-label" for="radioDefault13">
+                                                    Todas
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault14">
+                                                <label class="form-check-label" for="radioDefault14">
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault15">
+                                                <label class="form-check-label" for="radioDefault15">
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault16">
+                                                <label class="form-check-label" for="radioDefault16">
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star-half"></i>
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault17">
+                                                <label class="form-check-label" for="radioDefault17">
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                    <i class="fa-solid fa-star"></i>
+                                                </label>
+                                            </div>                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <h3 class="pb-4 mb-2 fst-italic">200 resultados</h3>
+                    <div class="col">
+                        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative service">
+                            <div class="col-auto d-none d-lg-block">
+                                <img src="../img/reserva/reserva-1.webp" class="img-fluid custom-text-box-image-reservation" alt="">
+                            </div>
+                            <div class="col p-4 d-flex flex-column position-static">
+                                <strong class="d-inline-block mb-2 text-primary-emphasis">Hotel</strong>
+                                <h3 class="mb-0">JW Marriott Hotel Lima</h3>
+                                <div class="mb-1 text-body-secondary">A 2.0 km del centro</div>
+                                <p class="card-text mb-auto">
+                                    Disfruta de una estancia de primer nivel en uno de los hoteles más emblemáticos de Miraflores, con habitaciones elegantes, 
+                                    spa, piscina y una privilegiada vista al océano
+                                </p>
+                                <div class="d-flex justify-content-start align-items-center review">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>                                                  
+                                </div>
+                            </div>
+                            <a href="#" class="stretched-link"></a>
+                        </div>
+                        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative service">
+                            <div class="col-auto d-none d-lg-block">
+                                <img src="../img/reserva/reserva-2.webp" class="img-fluid custom-text-box-image-reservation" alt="">
+                            </div>
+                            <div class="col p-4 d-flex flex-column position-static">
+                                <strong class="d-inline-block mb-2 text-primary-emphasis">Hotel</strong>
+                                <h3 class="mb-0">Casa Andina Premium Cusco</h3>
+                                <div class="mb-1 text-body-secondary">A 2650m del centro</div>
+                                <p class="card-text mb-auto">
+                                    Hospédate en una casona colonial restaurada que combina historia, arquitectura y modernas comodidades a pocos minutos de la 
+                                    Plaza de Armas del Cusco
+                                </p>
+                                <div class="d-flex justify-content-start align-items-center review">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half"></i>                                              
+                                </div>
+                            </div>
+                            <a href="#" class="stretched-link"></a>
+                        </div>
+                        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative service">
+                            <div class="col-auto d-none d-lg-block">
+                                <img src="../img/reserva/reserva-3.webp" class="img-fluid custom-text-box-image-reservation" alt="">
+                            </div>
+                            <div class="col p-4 d-flex flex-column position-static">
+                                <strong class="d-inline-block mb-2 text-primary-emphasis">Restaurante</strong>
+                                <h3 class="mb-0">Maido: una experiencia nikkei incomparable</h3>
+                                <div class="mb-1 text-body-secondary">A 1.4 km del centro</div>
+                                <p class="card-text mb-auto">
+                                    Descubre la reconocida cocina nikkei en un ambiente elegante, donde cada plato fusiona la gastronomía peruana y 
+                                    japonesa con una presentación excepcional
+                                </p>
+                                <div class="d-flex justify-content-start align-items-center review">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star-half"></i>                                                
+                                </div>
+                            </div>
+                            <a href="#" class="stretched-link"></a>
+                        </div>
+                        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative service">
+                            <div class="col-auto d-none d-lg-block">
+                                <img src="../img/reserva/reserva-4.webp" class="img-fluid custom-text-box-image-reservation" alt="">
+                            </div>
+                            <div class="col p-4 d-flex flex-column position-static">
+                                <strong class="d-inline-block mb-2 text-primary-emphasis">Restaurante</strong>
+                                <h3 class="mb-0">Panchita: el sabor de la cocina criolla</h3>
+                                <div class="mb-1 text-body-secondary">A 1.1 km del centro</div>
+                                <p class="card-text mb-auto">
+                                    Disfruta de una amplia variedad de platos tradicionales peruanos preparados con ingredientes frescos y recetas que 
+                                    resaltan la esencia de la gastronomía nacional
+                                </p>
+                                <div class="d-flex justify-content-start align-items-center review">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>                                                  
+                                </div>
+                            </div>
+                            <a href="#" class="stretched-link"></a>
+                        </div>
+                        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative service">
+                            <div class="col-auto d-none d-lg-block">
+                                <img src="../img/reserva/reserva-5.webp" class="img-fluid custom-text-box-image-reservation" alt="">
+                            </div>
+                            <div class="col p-4 d-flex flex-column position-static">
+                                <strong class="d-inline-block mb-2 text-primary-emphasis">Alquiler</strong>
+                                <h3 class="mb-0">SUV lista para tu próxima aventura</h3>
+                                <div class="mb-1 text-body-secondary">Capacidad: 5 personas</div>
+                                <p class="card-text mb-auto">
+                                    Vehículo espacioso, equipado con aire acondicionado, GPS y seguro incluido. Perfecto para recorrer la costa, la sierra o 
+                                    la selva peruana con total comodidad
+                                </p>
+                                <div class="d-flex justify-content-start align-items-center review">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>                                                  
+                                </div>
+                            </div>
+                            <a href="#" class="stretched-link"></a>
+                        </div>
+                        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative service">
+                            <div class="col-auto d-none d-lg-block">
+                                <img src="../img/reserva/reserva-6.webp" class="img-fluid custom-text-box-image-reservation" alt="">
+                            </div>
+                            <div class="col p-4 d-flex flex-column position-static">
+                                <strong class="d-inline-block mb-2 text-primary-emphasis">Tour</strong>
+                                <h3 class="mb-0">Descubre Machu Picchu en un día inolvidable</h3>
+                                <div class="mb-1 text-body-secondary">Full day (12 horas)</div>
+                                <p class="card-text mb-auto">
+                                    Vive una experiencia guiada que incluye transporte, entradas y acompañamiento profesional para conocer una de las maravillas 
+                                    del mundo moderno
+                                <div class="d-flex justify-content-start align-items-center review">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>                                                  
+                                </div>
+                            </div>
+                            <a href="#" class="stretched-link"></a>
+                        </div>
+                        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative service">
+                            <div class="col-auto d-none d-lg-block">
+                                <img src="../img/reserva/reserva-7.webp" class="img-fluid custom-text-box-image-reservation" alt="">
+                            </div>
+                            <div class="col p-4 d-flex flex-column position-static">
+                                <strong class="d-inline-block mb-2 text-primary-emphasis">Tour</strong>
+                                <h3 class="mb-0">Aventura en las dunas y oasis de Huacachina</h3>
+                                <div class="mb-1 text-body-secondary">6 horas</div>
+                                <p class="card-text mb-auto">
+                                    Recorre el desierto en vehículos tubulares y practica sandboarding mientras disfrutas de uno de los paisajes más impresionantes del Perú
+                                </p>
+                                <div class="d-flex justify-content-start align-items-center review">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>                                                  
+                                </div>
+                            </div>
+                            <a href="#" class="stretched-link"></a>
+                        </div>
+                    </div>
+                    <nav class="d-flex justify-content-center mt-4">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled">
+                                <a class="page-link">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-left-fill mb-1" viewBox="0 0 16 16">
+                                        <path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/>
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item"><a class="page-link" href="#">4</a></li>
+                            <li class="page-item"><a class="page-link" href="#">...</a></li>
+                            <li class="page-item"><a class="page-link" href="#">18</a></li>
+                            <li class="page-item"><a class="page-link" href="#">19</a></li>
+                            <li class="page-item"><a class="page-link" href="#">20</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-right-fill mb-1" viewBox="0 0 16 16">
+                                        <path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/>
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- //////////////// FOOTER //////////////// -->
+    <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top google-sans-400">
+            <p class="col-md-4 mb-0 text-body-secondary">&copy; 2026 Viajamas, Inc</p>
+            <a href="home.html" class="nav-brand">
+                <img 
+                    src="../img/logo-footer.webp"
+                    alt="Logo"
+                    width="150"
+                    height="auto"
+                >
+            </a>
+            <ul class="nav col-md-4 justify-content-end">
+                <li class="nav-item">
+                    <a href="#" class="nav-link px-2 text-body-secondary" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+                        </svg>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link px-2 text-body-secondary" aria-label="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                            <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+                        </svg>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link px-2 text-body-secondary" aria-label="Twitter">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16">
+                            <path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/>
+                        </svg>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link px-2 text-body-secondary" aria-label="Tiktok">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tiktok" viewBox="0 0 16 16">
+                            <path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3z"/>
+                        </svg>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link px-2 text-body-secondary" aria-label="Youtube">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
+                            <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"/>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+₂scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
